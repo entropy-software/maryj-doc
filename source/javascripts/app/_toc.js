@@ -26,7 +26,7 @@
     }).data('toc-tocify');
 
     $('<div class="menu-title1">API</div>').insertBefore('#tocify-header0');
-    $('<div class="menu-title2">METHODS</div>').insertBefore('#tocify-header2');
+    $('<div class="menu-title2">METHODS</div>').insertBefore('#tocify-header1');
 
     $("#nav-button").click(function() {
       $(".tocify-wrapper").toggleClass('open');
