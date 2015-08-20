@@ -2,7 +2,6 @@
 //= require ../lib/_jquery.tocify
 //= require ../lib/_imagesloaded.min
 (function (global) {
-  'use strict';
 
   var closeToc = function() {
     $(".tocify-wrapper").removeClass('open');
@@ -26,6 +25,9 @@
       }
     }).data('toc-tocify');
 
+    $('<div class="menu-title1">API</div>').insertBefore('#tocify-header0');
+    $('<div class="menu-title2">METHODS</div>').insertBefore('#tocify-header2');
+
     $("#nav-button").click(function() {
       $(".tocify-wrapper").toggleClass('open');
       $("#nav-button").toggleClass('open');
@@ -44,12 +46,7 @@
     }, 50);
   }
 
-  $(function() {
-    makeToc();
-    animate();
-    $('.content').imagesLoaded( function() {
-      global.toc.calculateHeights();
-    });
-  });
-})(window);
+  $(makeToc);
+  $(animate);
 
+})(window);
