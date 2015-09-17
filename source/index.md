@@ -16,10 +16,16 @@ includes:
 
   - api/authentication/authentication
 
-  - api/strains/strains
-  - api/strains/get_all_strains
-  - api/strains/get_a_specific_strain
-  - api/strains/search_strains
+  - methods/strains/strains
+  - methods/strains/get_all_strains
+  - methods/strains/get_a_specific_strain
+  - methods/strains/search_strains
+
+  - methods/definitions/definitions
+  - methods/definitions/conditions
+  - methods/definitions/effects
+  - methods/definitions/flavors
+  - methods/definitions/symptoms
 
 search: true
 ---
