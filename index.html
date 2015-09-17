@@ -292,6 +292,7 @@ If the strain cant by found a status code of 404 will be returned.
 <pre class="highlight shell"><code>curl -X <span class="s2">"POST"</span> <span class="s2">"http://api.maryj.dev/strain/search"</span> <span class="se">\</span>
     -H <span class="s2">"Accept: application/vnd.maryj.v1"</span> <span class="se">\</span>
     -d <span class="nv">$'</span><span class="o">{</span>
+          <span class="s2">"search"</span>: <span class="s2">"sour diesel"</span>,
           <span class="s2">"category"</span>: <span class="o">[</span>
             <span class="s2">"sativa"</span>
           <span class="o">]</span>,
@@ -365,11 +366,15 @@ If the strain cant by found a status code of 404 will be returned.
 </tr>
 </thead><tbody>
 <tr>
+<td>search</td>
+<td>Search key <code class="prettyprint">diesel</code></td>
+</tr>
+<tr>
 <td>category</td>
 <td>What category to search in <code class="prettyprint">sativa</code>, <code class="prettyprint">indica</code>, <code class="prettyprint">hybrid</code></td>
 </tr>
 <tr>
-<td>params</td>
+<td>definition</td>
 <td>Additional search parameters <code class="prettyprint">conditions</code>, <code class="prettyprint">effects</code>, <code class="prettyprint">flavor</code>, <code class="prettyprint">symptoms</code></td>
 </tr>
 </tbody></table>
