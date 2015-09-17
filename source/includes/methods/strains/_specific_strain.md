@@ -1,4 +1,4 @@
-## Get a Specific Strain
+## Specific Strain
 
 > Example Request
 
@@ -53,10 +53,10 @@ If the strain cant by found a status code of 404 will be returned.
 
 ### HTTP Request
 
-`GET http://api.maryj.io/strain/<SLUG>`
+`GET http://api.maryj.io/strain/:strain-slug`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-slug | Strain slug `sour-diesel`
+strain-slug | Strain slug `sour-diesel`

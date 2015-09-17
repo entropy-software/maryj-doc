@@ -17,8 +17,9 @@ includes:
   - api/authentication/authentication
 
   - methods/strains/strains
-  - methods/strains/get_all_strains
-  - methods/strains/get_a_specific_strain
+  - methods/strains/all_strains
+  - methods/strains/specific_strain
+  - methods/strains/specific_strain_definition
   - methods/strains/search_strains
 
   - methods/definitions/definitions

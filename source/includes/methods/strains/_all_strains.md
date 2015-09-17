@@ -1,4 +1,4 @@
-## Get All Strains
+## All Strains
 
 > Example Request
 
