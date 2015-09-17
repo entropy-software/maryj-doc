@@ -17,7 +17,7 @@ search: true
 
 # Introduction
 
-The Maryj API is organized around REST. Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which can be understood by off-the-shelf HTTP clients. 
+The Maryj API is organized around REST. Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which can be understood by off-the-shelf HTTP clients.
 
 We support cross-origin resource sharing to allow you to interact securely with our API from a client-side web application (though you should remember that you should never expose your secret API key in any public website's client-side code). JSON will be returned in all responses from the API, including errors.
 
@@ -26,6 +26,8 @@ You can view code examples in the dark area to the right, and you can switch the
 # Strains
 
 ## Get All Strains
+
+> Example Request
 
 ```ruby
 require 'net/http'
@@ -130,19 +132,7 @@ This endpoint retrieves all strains.
 
 ## Get a Specific Strain
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```php
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+> Example Request
 
 ```shell
 curl -X "GET" "http://api.maryj.dev/strain/sour-diesel" \
@@ -197,3 +187,88 @@ If the strain cant by found a status code of 404 will be returned.
 
 `GET http://api.maryj.io/strain/<SLUG>`
 
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+slug | Strain slug `sour-diesel`
+
+
+## Search Strains
+
+> Example Request
+
+```shell
+curl -X "POST" "http://api.maryj.dev/strain/search" \
+	-H "Accept: application/vnd.maryj.v1" \
+	-d $'{
+          "category": [
+            "sativa"
+          ],
+          "params": {
+            "flavors": [
+              "tropical"
+            ],
+            "conditions": [
+              "anxiety"
+            ],
+            "effects": [
+              "focused"
+            ],
+            "symptoms": [
+              "stress"
+            ]
+          }
+        }
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "meta": {
+    "code": 200
+  },
+  "data": {
+    "strain": {
+      "id": 1256,
+      "name": "Sour Diesel",
+      "slug": "sour-diesel",
+      "category": "Sativa",
+      "conditions": [
+        {
+          "name": "anxiety"
+        }
+      ],
+      "effects": [
+        {
+          "name": "happy"
+        }
+      ],
+      "flavor": [
+        {
+          "name": "diesel"
+        }
+      ],
+      "symptoms": [
+        {
+          "name": "stress"
+        }
+      ]
+    }
+  }
+}
+```
+
+This endpoint searches all strains with the provided parameters.
+
+### HTTP Request
+
+`POST http://api.maryj.io/strain/search`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+category | What category to search in `sativa`, `indica`, `hybrid`
+params | Additional search parameters `conditions`, `effects`, `flavor`, `symptoms`
