@@ -254,32 +254,32 @@ curl -X "POST" "http://api.maryj.dev/strain/search" \
     "code": 200
   },
   "data": {
-    "strain": {
-      "id": 1256,
-      "name": "Sour Diesel",
-      "slug": "sour-diesel",
-      "category": "Sativa",
-      "conditions": [
-        {
-          "name": "anxiety"
-        }
-      ],
-      "effects": [
-        {
-          "name": "happy"
-        }
-      ],
-      "flavor": [
-        {
-          "name": "diesel"
-        }
-      ],
-      "symptoms": [
-        {
-          "name": "stress"
-        }
-      ]
-    }
+    "search": [
+      {
+        "id": 1,
+        "name": "Aloha",
+        "slug": "aloha",
+        "category": "Sativa"
+      },
+      {
+        "id": 298,
+        "name": "Buffalo Bill",
+        "slug": "buffalo-bill",
+        "category": "Sativa"
+      },
+      {
+        "id": 650,
+        "name": "Green Lantern",
+        "slug": "green-lantern",
+        "category": "Sativa"
+      },
+      {
+        "id": 678,
+        "name": "Hawaiian Haze",
+        "slug": "hawaiian-haze",
+        "category": "Sativa"
+      }
+    ]
   }
 }
 ```
