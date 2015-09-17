@@ -9,9 +9,6 @@ language_tabs:
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
 
-includes:
-  - errors
-
 search: true
 ---
 
@@ -22,6 +19,33 @@ The Maryj API is organized around REST. Our API is designed to have predictable,
 We support cross-origin resource sharing to allow you to interact securely with our API from a client-side web application (though you should remember that you should never expose your secret API key in any public website's client-side code). JSON will be returned in all responses from the API, including errors.
 
 You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+
+## Making Requests
+
+All requests should supply the Accept: application/vnd.maryj.v1 header `v1 - is the API version`. POST requests must have a JSON encoded body.
+
+Requests must be made over HTTPS. Any non-secure requests are met with a redirect (HTTP 302) to the HTTPS equivalent URI.
+
+## Errors
+
+Maryj uses conventional HTTP response codes to indicate success or failure of an API request. In general, codes in the 2xx range indicate success, codes in the 4xx range indicate an error that resulted from the provided information (e.g. a required parameter was missing, a missing strain, etc.), and codes in the 5xx range indicate an error with Maryj's servers.
+
+
+Error Code | Meaning
+---------- | -------
+200 | OK -- Everything worked as expected.
+400 | Bad Request -- Often missing a required parameter.
+401 | Unauthorized -- No valid API key provided.
+402 | Request Failed -- Parameters were valid but request failed.
+404 | Not Found -- The requested item doesn't exist.
+500, 502, 503, 504 | Server Errors -- Something went wrong on Maryj's end.
+
+# Authentication
+
+To authenticate against Maryj API, you need an API access token.
+
+You can retrieve a token from one of your applications.
+
 
 # Strains
 
