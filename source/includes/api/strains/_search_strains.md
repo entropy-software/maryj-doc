@@ -6,6 +6,7 @@
 curl -X "POST" "http://api.maryj.dev/strain/search" \
 	-H "Accept: application/vnd.maryj.v1" \
 	-d $'{
+          "search": "sour diesel",
           "category": [
             "sativa"
           ],
@@ -74,5 +75,6 @@ This endpoint searches all strains with the provided parameters.
 
 Parameter | Description
 --------- | -----------
+search | Search key `diesel`
 category | What category to search in `sativa`, `indica`, `hybrid`
-params | Additional search parameters `conditions`, `effects`, `flavor`, `symptoms`
+definition | Additional search parameters `conditions`, `effects`, `flavor`, `symptoms`
