@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - api/introduction/introduction
   - api/introduction/making_requests
+  - api/introduction/pagination
   - api/introduction/errors
 
   - api/authentication/authentication

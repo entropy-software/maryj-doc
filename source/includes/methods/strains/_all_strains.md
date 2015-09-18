@@ -76,20 +76,20 @@ curl -X "GET" "http://api.maryj.dev/strain/all" \
 ```json
 {
   "meta": {
-    "code": 200
+    ...........
   },
   "data": {
     "strains": [
       {
-        "id": 1,
-        "name": "Aloha",
-        "slug": "aloha",
-        "category": "Sativa"
+        "id": 15,
+        "name": "Anesthesia",
+        "slug": "anesthesia",
+        "category": "Indica"
       },
       {
-        "id": 2,
-        "name": "Alohaberry",
-        "slug": "alohaberry",
+        "id": 16,
+        "name": "Animal Cookies",
+        "slug": "animal-cookies",
         "category": "Hybrid"
       }
     ]

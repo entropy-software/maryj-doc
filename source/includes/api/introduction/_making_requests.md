@@ -2,15 +2,7 @@
 
 > API Endpoint
 
-```ruby
-https://api.maryj.dev/
-```
-
-```php
-https://api.maryj.dev/
-```
-
-```shell
+```json
 https://api.maryj.dev/
 ```
 
